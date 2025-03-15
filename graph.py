@@ -14,7 +14,7 @@ def plot_temperature(df, city=None, year=None, show=True):
     plt.plot(df["timestamp"], df["rolling_mean"], label="Rolling Mean", color='red', linewidth=2)
     plt.fill_between(df["timestamp"], df["lower_bound"], df["upper_bound"], color='gray', alpha=0.2)
     plt.scatter(df["timestamp"], df["temperature"], c=df["anomaly"].map({True: 'red', False: 'blue'}),
-                label="Anomalies")
+                label="Is Anomaly (Red=Yes, Blue=No)")
     plt.xlabel("Date")
     plt.ylabel("Temperature (Celsius)")
     plt.title(f"Temperature Trends and Anomalies{(' in ' + city) if city is not None else ''}")
