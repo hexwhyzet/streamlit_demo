@@ -38,7 +38,7 @@ def is_temperature_normal(city, temperature, season, seasonal_stats):
     return mean_temperature - 2 * std_temperature < temperature < mean_temperature + 2 * std_temperature
 
 
-async def check_city(city, current_season, request_mode, seasonal_stats):
+def check_city(city, current_season, request_mode, seasonal_stats):
     if request_mode == "sync":
         temp = get_temperature_sync(city)
     elif request_mode == "async":
